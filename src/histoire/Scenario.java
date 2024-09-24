@@ -22,10 +22,11 @@ public class Scenario {
 		asterix.parler("Bonjour à tous");
 		
 		minus.parler("UN GAU... UNA GAUGAU...");
+		panoramix.booster(asterix);
 		
 		asterix.frapper(minus);
-		asterix.frapper(minus);
-		asterix.frapper(minus);
+//		asterix.frapper(minus);
+//		asterix.frapper(minus);
 		
 	}
 
