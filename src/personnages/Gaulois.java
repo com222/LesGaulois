@@ -1,10 +1,12 @@
 package personnages;
 
+import java.util.Iterator;
+
 public class Gaulois {
 	private String nom;
 	private int force;
-	private int nbTrophees;
 	private int effetPotion = 1;
+	private int nbTrophees;
 	private Equipement[] trophees = new Equipement[100];
 
 	public Gaulois(String nom, int force) {
@@ -35,7 +37,7 @@ public class Gaulois {
 //	}
 	
 	public void frapper(Romain romain) {
-		System.out.println(nom + " envoie un grand coup dans la m�choire de " + romain.getNom());
+		System.out.println(nom + " envoie un grand coup dans la m�choire de " + romain.getNom());
 		Equipement[] cesTrophees = romain.recevoirCoup((force / 3) * effetPotion);
 		for (int i = 0; cesTrophees != null && i < cesTrophees.length; i++, nbTrophees++) {
 			this.trophees[nbTrophees] = cesTrophees[i];
@@ -47,6 +49,15 @@ public class Gaulois {
 		effetPotion = forcePotion;
 		parler("Merci Druide, je sens que ma force est " + effetPotion + " fois décuplée.");
 
+	}
+	
+	public void faireUneDonnation(Musee musee) {
+		parler("Je donne au musee tous mes trophees : ");
+		for (int i = 0; i<nbTrophees;i++) {			
+			musee.donnerTrophee(this, trophees[i]);
+			System.out.println("-" + trophees[i]);
+		}
+		nbTrophees = 0; 
 	}
 
 	@Override
