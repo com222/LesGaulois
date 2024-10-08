@@ -24,12 +24,7 @@ public class Musee {
     }
 	
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Asterix",8);
-        Trophee[] trophees = {
-            new Trophee(asterix, Equipement.BOUCLIER),
-            new Trophee(asterix, Equipement.CASQUE),
-        };
-        Musee musee = new Musee();
-        System.out.println(musee.extraireInstructionsOCaml());
+	
+       
     }
 }

@@ -1,7 +1,5 @@
 package personnages;
 
-import java.util.Iterator;
-
 public class Gaulois {
 	private String nom;
 	private int force;

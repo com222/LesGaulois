@@ -6,13 +6,10 @@ public class Village {
 	private Gaulois[] villageois;
 	private int nbVillageois = 0;
 
-	public Village(String nom , int nbVillageoisMaximum) {
+	public Village(String nom , int nbVillageoisMaximum, String nomChef, int forceChef) {
 		this.nom = nom;
 		villageois = new Gaulois[nbVillageoisMaximum];
-	}
-	
-	public void setChef(Chef chef) {
-		this.chef = chef;
+		Chef chef = new Chef(nomChef,forceChef,this);
 	}
 	
 	public String getNom() {
@@ -38,13 +35,10 @@ public class Village {
 	}
 	
 	public static void main(String[] args) {
-		Village village = new Village("village des Irréductibles",30);
+		Village village = new Village("village des Irrï¿½ductibles",30,"Abraracourcix",6);
 		
 //		Gaulois gaulois = village.trouverHabitant(30);
 //		car le tableau va de l'index  a l'index 29, 30 est donc en dehors du tableau
-		
-		Chef abraracourcix = new Chef("Abraracourcix",6,village);
-		village.setChef(abraracourcix);
 		
 		Gaulois asterix = new Gaulois("Asterix",8);
 		village.ajouterHabitant(asterix);
